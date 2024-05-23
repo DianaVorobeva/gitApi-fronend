@@ -16,6 +16,11 @@ export interface IRepo {
   language: string,
 }
 
+export interface IData {
+  repos: IRepo[],
+  setRepos: (repos:IRepo[]) => void
+}
+
 function App() {
   const [repos, setRepos] = useState<IRepo[]>([]);
 
@@ -45,7 +50,7 @@ function App() {
           </span>
         </div>
         
-        <Search setRepos={setRepos}/>
+        <Search repos={repos} setRepos={setRepos} />
         
         <RepoCards repos={repos} setRepos={setRepos} />
       </div>

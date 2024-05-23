@@ -1,19 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './RepoCards.css';
 import RepoCard from '../RepoCard/RepoCard';
 import { getAllRepos } from '../../API/DBRequest';
+import { IData } from '../../App';
 
-export interface IRepo {
-    id: string,
-    name: string,
-    url: string,
-    avatar_url: string,
-    description: string,
-    stars: number,
-    language: string,
-}
 
-const RepoCards = ({repos, setRepos}) => {
+
+const RepoCards = (props:IData) => {
 
 
     // fetch data from Github API
@@ -22,7 +15,7 @@ const RepoCards = ({repos, setRepos}) => {
         const fetchHRepoData = async () => {
             try {
               const { data } = await getAllRepos();
-              setRepos(data);
+              props.setRepos(data);
             } catch (error) {
               console.log(error);
             }
@@ -35,7 +28,7 @@ const RepoCards = ({repos, setRepos}) => {
     return (
         <div className='container'>
         {
-                repos!=null && repos.map((repo) => { 
+                props.repos!=null && props.repos.map((repo) => { 
                     return (
                         <div className="wrapper2" key={repo.id}>
                             <RepoCard props={repo}/>
@@ -44,7 +37,7 @@ const RepoCards = ({repos, setRepos}) => {
                     )})
             }
         {
-            repos.length === 0 && (
+            props.repos.length === 0 && (
                 <div className="wrapper2">
                     <p>No repos found</p>
                 </div>

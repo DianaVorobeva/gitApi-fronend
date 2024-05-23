@@ -1,4 +1,4 @@
-import { IRepo } from '../RepoCards/RepoCards';
+import { IRepo } from '../../App';
 import './RepoCard.css';
 import { FaStar } from "react-icons/fa";
 

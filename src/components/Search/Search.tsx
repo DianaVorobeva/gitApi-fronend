@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import './Search.css';
 import { getOneRepo } from '../../API/DBRequest';
+import { IData } from '../../App';
 
 
-const Search = ({setRepos}) => {
+const Search = (props:IData) => {
     const [search, setSearch] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
@@ -21,7 +22,7 @@ const Search = ({setRepos}) => {
           alert("Please type a name or ID to search");
         } else {
         const {data} = await getOneRepo(search);
-        setRepos(data);
+        props.setRepos(data);
         setSearch("");
         }
       };
