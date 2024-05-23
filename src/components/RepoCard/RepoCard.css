@@ -1,0 +1,43 @@
+.infoCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    background-color: #F0F0F0;
+    padding: 10px;
+    border-radius: 10px;
+    width: 450px;
+    height: 550px;
+    font-family: "Anta", sans-serif;
+    color: #3C486B;
+    flex: 1;
+}
+
+.name {
+    font-size: 20px;
+}
+
+
+.infoImg {
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid silver;
+    padding: 4px;
+    object-fit: contain;
+}
+
+.desc, .lang, .url {
+    align-self: flex-start;
+}
+
+.url {
+    text-decoration: none;
+    color: #3C486B;
+}
+
+.stars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

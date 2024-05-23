@@ -1,0 +1,31 @@
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin: 20px;
+    font-family: "Anta", sans-serif;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(40, 52, 62, 0.07);
+    font-family: "Anta", sans-serif;
+}
+
+.btn {
+    background-color: #F45050;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    width: 20%;
+    text-transform: uppercase;
+    font-family: "Anta", sans-serif;
+    font-size: 23px;
+    color: #3C486B;
+    margin-top: 10px;
+}
